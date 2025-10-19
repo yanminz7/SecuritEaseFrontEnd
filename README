@@ -13,31 +13,20 @@ This project is a test automation framework built using **Playwright**, **TypeSc
 project-root/
 │
 ├── src/
-│    └──main/   
-│    │   └──code      
-│    │      ├──page-objects              
-│    │      │    ├──BBC.ts                 # classes to interact with BBC Sports Result Page
-│    │      │    ├──RegisterPage.ts        # classes to interact with Register Pop up Page
-│	 │		│	 └──SearchPage.ts          # classes to interact with Search Page
-│	 │	    ├──setup            
-│    │      │    ├── hooks.ts              # hooks file for brower setup 
-│	 │		│	 └── world.ts              # world file to define variables that can be passed in step files 
-│	 │		│	
-│	 │	    └──stepdefinitions           
-│    │           ├── race-result.step.ts   # step definitions file to get race result for sports
-│	 │			 └── search.step.ts        # step definitions file to implement search functionality
-│    └── test/         
-│          └── resources
-│                └── features     
-                       ├── RaceResult.feature   # Feature file to get race result 
-					   └── Search.feature       # Feature file for search functionality
+│   └──main/   
+│       └──code      
+│          ├──page-objects     # classes to interact with web pages
+│		   ├──setup            # hooks.ts world.ts
+│		   └──stepdefinitions  # step definitions
+│   └── test/         
+│         └── resources
+│                └── features     # feature files
 │
 ├── reports/                     # JSON + HTML reports. Cucumber report is generated as reports/html/index.html
 │
-├── cucumber.json                # Cucumber config
-├── Dockerfile  
-├── package.json               
-├── tsconfig.json                # TypeScript config
+├── cucumber.json               # Cucumber config
+│── package.json               
+├── tsconfig.json               # TypeScript config
 ├── reports.ts                   # HTML report generator
 └── package.json
 
@@ -47,15 +36,16 @@ cd your-repo-name
 
 npm install
 
-## Running Tests and generate cucumber report
+## Running Tests
 
-npm run test
-npm run report
+npm run test:report
 
-## Docker 
+## Docker (win10)
 In project-root：
 docker build -t securitease_frontend  .
-docker run --rm  securitease_frontend:latest
+docker run --rm --name se_front_end_test -v "%cd%\test_reports:/app/reports" securitease_frontend:latest
+docker exec -it se_front_end_test npm run report
+
 
 
 	
