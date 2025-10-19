@@ -1,0 +1,186 @@
+[
+  {
+    "description": "Title: As a BBC editor, I want to accurately report the results of the 2023 Las Vegas Grand Prix, where Max Verstappen took 1st place, \nGeorge Russell finished 2nd, and Sergio Perez secured 3rd place, so that my audience is informed about the key highlights of the race.",
+    "elements": [
+      {
+        "description": "",
+        "id": "validation-bbc-sports-result;verify-the-top-3-finishers-of-the-2023-las-vegas-grand-prix-on-bbc-sport",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Verify the top 3 finishers of the 2023 Las Vegas Grand Prix on BBC Sport",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 465280199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am on the BBC Sport \"Formula\"",
+            "match": {
+              "location": "src\\main\\code\\stepdefinitions\\race-result.step.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2932253499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I search Result for the \"2023\" \"Las Vegas Grand Prix\"",
+            "match": {
+              "location": "src\\main\\code\\stepdefinitions\\race-result.step.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3741198299
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Rank",
+                      "Driver"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "1",
+                      "Max Verstappen"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "2",
+                      "George Russell"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "3",
+                      "Sergio Perez"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the top 3 finishers should be:",
+            "match": {
+              "location": "src\\main\\code\\stepdefinitions\\race-result.step.ts:23"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 14600599,
+              "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m\"George Russell\"\u001b[39m\nReceived: \u001b[31m\"Charles Leclerc\"\u001b[39m\n    at Proxy.<anonymous> (C:\\ZYM\\SecuritEase\\node_modules\\playwright\\lib\\matchers\\expect.js:221:24)\n    at CustomWorld.<anonymous> (C:\\ZYM\\SecuritEase\\src\\main\\code\\stepdefinitions\\race-result.step.ts:32:20)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 104696899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "validation-bbc-sports-result",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Validation BBC Sports Result",
+    "tags": [],
+    "uri": "src\\test\\resources\\features\\RaceResult.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "retrieve-search-results;retrieve-search-results",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Retrieve search results",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 255114199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on the \"https://www.bbc.com/sport\"",
+            "match": {
+              "location": "src\\main\\code\\stepdefinitions\\search.step.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2354689400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I search for \"Sport in 2023\"",
+            "match": {
+              "location": "src\\main\\code\\stepdefinitions\\search.step.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9881781799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I should see at least 4 relevant results",
+            "match": {
+              "location": "src\\main\\code\\stepdefinitions\\search.step.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2361400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 155739899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "retrieve-search-results",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Retrieve search results",
+    "tags": [],
+    "uri": "src\\test\\resources\\features\\Search.feature"
+  }
+]

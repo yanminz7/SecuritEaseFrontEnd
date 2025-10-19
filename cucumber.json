@@ -1,0 +1,23 @@
+{
+    "default": {
+        "formatOptions": {
+            "snippetInterface": "async-await"
+        },
+        "publishQuiet": true,
+        "dryRun": false,
+        "paths": [
+            "src/test/resources/features/"
+        ],
+        "require": [
+            "src/main/code/setup/world.ts",
+            "src/main/code/stepdefinitions/*.ts",
+            "src/main/code/setup/hooks.ts"
+        ],
+        "format": [
+             "json:reports/cucumber_report.json"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ]
+    }
+}
